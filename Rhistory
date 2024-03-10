@@ -1,0 +1,512 @@
+download.file("https://github.com/s2465202/Probability-Statistics_Assignment/blob/main/biomarkers.xlsx", destfile = "biomarkfile",mode = "wb")
+biomarker <- read_excel("biomarkers.xlsx")
+download.file("https://github.com/s2465202/Probability-Statistics_Assignment/blob/main/biomarkers.xlsx", destfile = "biomarker",mode = "wb")
+biomarker <- read_excel("biomarkers.xlsx")
+biomarker <- read_excel("biomarker.xlsx")
+biomarker <- read_excel("biomarker")
+download.file("https://github.com/s2465202/Probability-Statistics_Assignment/blob/main/biomarkers.xlsx", destfile = "biomarkers.xlsx",mode = "wb")
+biomarker <- read_excel("biomarkers.xlsx")
+install.packages("readxl")
+biomarker <- read_excel("biomarkers.xlsx")
+covariates <- read_excel("covariates.xlsx")
+# Create new columns to separate the patient ID and time of blood sampling and convert the table from long to wide format in order to have 1 row per patient
+biomarker_name <- colnames(biomarker[,2:10])
+biomarker <- biomarker %>%
+separate_wider_delim(Biomarker,delim="-",names=c("PatientID","SampleTime")) %>%
+pivot_wider(names_from=SampleTime,values_from=all_of(biomarker_name),names_vary="slowest")
+source("~/Probability & Statistics/Assignment_B232713.R", echo=TRUE)
+install.packages("dplyr")
+install.packages("readxl")
+install.packages("tidyverse")
+install.packages("tidyverse")
+View(rowithna)
+View(rowithna)
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(VAS-at-inclusion >= 5)
+colnames(fulldata)
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(VAS-at-inclusion>= 5)
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter('VAS-at-inclusion'>= 5)
+View(highVASdata)
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5)
+rowsSums(is.na(highVASdata))
+rowSums(is.na(highVASdata))
+ColSums(is.na(highVASdata))
+colSums(is.na(highVASdata))
+# Select column names for biomarker levels at inclusion (time = 0)
+biomarker_name_inclusion <- colnames(fulldata[,7:15])
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5) %>%
+drop.na()
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5) %>%
+drop_na()
+View(rowithna)
+View(rowithna)
+drop_na(any_of(biomarker_name_inclusion)
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5) %>%
+drop_na(any_of(biomarker_name_inclusion))
+colSums(is.na(highVASdata))
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5) %>%
+drop_na(any_of(biomarker_name_inclusion))
+colSums(is.na(highVASdata))
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5)
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5)
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5) %>%
+drop_na(any_of(biomarker_name_inclusion))
+lowVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`<5) %>%
+drop_na(any_of(biomarker_name_inclusion))
+source("~/Probability & Statistics/Assignment_B232713.R")
+install.packages("dplyr")
+install.packages("readxl")
+install.packages("tidyverse")
+ggplot(aes(x=`VAS-at-inclusion`,y=BiomarkerLevel))+
+geom_point()+
+facet_wrap(~BiomarkerName)
+# Visualise the VAS level by biomarker level to have an preliminary data discovery
+fulldata %>%
+drop_na(any_of(biomarker_name_inclusion))%>%
+select("PatientID","VAS-at-inclusion","IL-8-0weeks":"CXCL1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-c("PatientID","VAS-at-inclusion"))%>%
+ggplot(aes(x=`VAS-at-inclusion`,y=BiomarkerLevel))+
+geom_point()+
+facet_wrap(~BiomarkerName)
+# Visualise the VAS level by biomarker level to have an preliminary data discovery
+fulldata %>%
+drop_na(any_of(biomarker_name_inclusion))%>%
+select("PatientID","VAS-at-inclusion","IL-8_0weeks":"CXCL1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-c("PatientID","VAS-at-inclusion"))%>%
+ggplot(aes(x=`VAS-at-inclusion`,y=BiomarkerLevel))+
+geom_point()+
+facet_wrap(~BiomarkerName)
+View(fulldata)
+View(fulldata)
+source("~/Probability & Statistics/Assignment_B232713.R")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("readxl")
+install.packages("tidyverse")
+install.packages("tidyverse")
+install.packages("readxl")
+# Visualise the VAS level by biomarker level to have an preliminary data discovery
+fulldata %>%
+drop_na(any_of(biomarker_name_inclusion))%>%
+select("PatientID","VAS-at-inclusion","IL-8_0weeks":"CSF-1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-c("PatientID","VAS-at-inclusion"))%>%
+ggplot(aes(x=`VAS-at-inclusion`,y=BiomarkerLevel))+
+geom_point()+
+facet_wrap(~BiomarkerName)
+# Visualise the VAS level by biomarker level to have an preliminary data discovery
+fulldata %>%
+drop_na(any_of(biomarker_name_inclusion))%>%
+select("PatientID","VAS-at-inclusion","IL-8_0weeks":"CSF-1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-c("PatientID","VAS-at-inclusion"))%>%
+ggplot(aes(x=`VAS-at-inclusion`,y=BiomarkerLevel))+
+geom_point()+
+facet_wrap(~BiomarkerName,scale="free_y")
+# Visualise the VAS level by biomarker level to have an preliminary data discovery
+fulldata %>%
+drop_na(any_of(biomarker_name_inclusion))%>%
+select("PatientID","VAS-at-inclusion","IL-8_0weeks":"CSF-1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-c("PatientID","VAS-at-inclusion"))%>%
+ggplot(aes(x=`VAS-at-inclusion`,y=BiomarkerLevel))+
+geom_point()+
+facet_wrap(~BiomarkerName)
+# Compare the descriptive statistics for the two groups
+summary(highVASdata)
+summary(lowVASdata)
+# Compare the descriptive statistics for the two groups
+summary(highVASdata[,7:15])
+summary(lowVASdata[,7:15])
+library("formattable")
+library(stargazer)
+stargazer(highVASdata[,7:15])
+detach("package:stargazer", unload = TRUE)
+install.packages("formattable")
+library("formattable")
+# Compare the descriptive statistics for the two groups
+formattable(summary(highVASdata[,7:15]))
+library("gt")
+install.packages("gt")
+install.packages("gt")
+library("gt")
+# Compare the descriptive statistics for the two groups
+gt(summary(highVASdata[,7:15]))
+# Compare the descriptive statistics for the two groups
+gt(summary(highVASdata[,7:15]))
+gt(lowVASdata[,7:15])
+# Compare the descriptive statistics for the two groups
+gt(summary(highVASdata[,7:15]))
+# Compare the descriptive statistics for the two groups
+highVASdes <- summary(highVASdata[,7:15]))
+# Compare the descriptive statistics for the two groups
+highVASdes <- summary(highVASdata[,7:15])
+gt(highVASdes)
+gt(as.dataframe(highVASdes))
+gt(as.data.frame(highVASdes))
+gtsummary(lowVASdata[,7:15])
+tbl_summary(lowVASdata[,7:15])
+library("gtsummary")
+install.packages("gtsummary")
+library("gtsummary")
+library(gtsummary)
+library("gt")
+library("gtsummary")
+library(gtsummary)
+detach("package:gt", unload = TRUE)
+library(gt)
+library(htmltools)
+detach("package:formattable", unload = TRUE)
+library(htmltools)
+library(rmarkdown)
+library(gtsummary)
+library(gt)
+library(gtable)
+detach("package:gtable", unload = TRUE)
+detach("package:gt", unload = TRUE)
+# Compare the descriptive statistics for the two groups
+highVASdes <- summary(highVASdata[,7:15])
+# Compare the descriptive statistics for the two groups
+highVASdes <- as.data.frame(summary(highVASdata[,7:15]))
+View(highVASdes)
+# Compare the descriptive statistics for the two groups
+highVASdes <- as.data.frame(describe(highVASdata[,7:15]))
+# Compare the descriptive statistics for the two groups
+highVASdes <- summary.data.frame(highVASdata[,7:15]))
+# Compare the descriptive statistics for the two groups
+highVASdes <- summary.data.frame(highVASdata[,7:15])
+summary.data.frame(highVASdata[,7:15])
+# Compare the descriptive statistics for the two groups
+highVASdes <- as.data.frame(summary(highVASdata[,7:15]))
+highVASdes
+# Compare the descriptive statistics for the two groups
+highVASdes <- summary(highVASdata[,7:15])
+highVASdes
+library("psych")
+# Compare the descriptive statistics for the two groups
+highVASdes <- describe(highVASdata[,7:15])
+View(highVASdes)
+View(highVASdes)
+View(highVASdata)
+View(lowVASdata)
+# Compare the descriptive statistics for the two groups
+VASgrouped <- cbind(highVASdata,rep("High VAS",80)
+# Compare the descriptive statistics for the two groups
+VASgrouped <- cbind(highVASdata,rep("High VAS",80))
+highVASdes <- describe(highVASdata[,7:15])
+# Compare the descriptive statistics for the two groups
+VASgrouped <- cbind(highVASdata,rep("High VAS",80))
+View(VASgrouped)
+# Compare the descriptive statistics for the two groups
+VASgrouped <- rbind(mutate(highVASdata,VASgp="High"),mutate(lowVASdata,VASgp="low"))
+View(VASgrouped)
+View(highVASdata)
+View(lowVASdata)
+highVASdes <- describeBy(highVASdata[,7:15],group=VASgp)
+highVASdes <- describeBy(highVASdata[,7:15],group="VASgp")
+highVASdes <- describeBy(highVASgrouped[,7:15],group="VASgp")
+highVASdes <- describeBy(VASgrouped[,7:15],group="VASgp")
+highVASdes <- describeBy(VASgrouped[,7:15],group=VASgp)
+View(VASgrouped)
+highVASdes <- describeBy(VASgrouped[,7:15],VASgp)
+highVASdes <- describeBy(VASgrouped[,7:15],VASgrouped$VASgp)
+View(highVASdes)
+highVASdes <- describeBy(VASgrouped[,7:15]~VASgp)
+View(highVASdes)
+describeBy(VASgrouped[,7:15]~VASgp)
+VASdesc<-describeBy(VASgrouped[,7:15]~VASgp)
+View(VASdesc)
+# Compare the descriptive statistics for the two groups
+VASgrouped <- rbind(mutate(highVASdata,VASgp="High"),mutate(lowVASdata,VASgp="low"))%>%
+select("IL-8_0weeks":"CSF-1_0weeks","VASgp")
+VASdesc<-describeBy(VASgrouped~VASgp)
+View(VASdesc)
+View(VASdesc)
+describe(VASgrouped)
+VASdes <- describe(VASgrouped)
+View(VASdes)
+VASdes <- describe(filter(VASgrouped,VASgp="High")
+VASdes <- describe(filter(VASgrouped,VASgp="High"))
+View(VASdes)
+# Compare the descriptive statistics for the two groups
+highVASstat <- highVASdata %>%
+select("IL-8_0weeks":"CSF-1_0weeks")%>%
+describe()
+View(highVASstat)
+# Compare the descriptive statistics for the two groups
+highVASstat <- highVASdata %>%
+select("IL-8_0weeks":"CSF-1_0weeks")%>%
+describe()%>%
+mutate(VASgroup="High")
+lowVASstat <- lowVASdata %>%
+select("IL-8_0weeks":"CSF-1_0weeks")%>%
+describe()%>%
+mutate(VASgroup="Low")
+View(lowVASstat)
+overallVASstat <- full_join(highVASstat,lowVASstat)
+View(overallVASstat)
+overallVASstat <- left_join(highVASstat,lowVASstat)
+# Compare the descriptive statistics for the two groups
+highVASstat <- highVASdata %>%
+select("IL-8_0weeks":"CSF-1_0weeks")%>%
+describe()%>%
+mutate(VASgroup="High")%>%
+mutate(vars = rownames)
+# Compare the descriptive statistics for the two groups
+highVASstat <- highVASdata %>%
+select("IL-8_0weeks":"CSF-1_0weeks")%>%
+describe()%>%
+mutate(VASgroup="High")%>%
+mutate(vars = rownames(highVAsstat))
+overallVASstat <- left_join(highVASstat,lowVASstat)
+overallVASstat <- left_join(highVASstat,lowVASstat,by.x=0,by.y=0)
+overallVASstat <- full_join(highVASstat,lowVASstat,by.x=0,by.y=0)
+overallVASstat <- full_join(highVASstat,lowVASstat)
+overallVASstat <- full_join(highVASstat,lowVASstat,by=vars)
+overallVASstat <- full_join(highVASstat,lowVASstat,by="vars")
+overallVASstat <- full_join(highVASstat,lowVASstat)
+overallVASstat <- full_join(highVASstat,lowVASstat)%>%
+rownames(rownames(highVASstat))
+overallVASstat <- full_join(highVASstat,lowVASstat)
+rownames(overallVASstat) <- rownames(highVASstat)
+row.names(overallVASstat) <- row.names(highVASstat)
+rownames(overallVASstat) <- rownames(highVASstat)
+overallVASstat <- full_join(highVASstat,lowVASstat)%>%
+pivot_wider(names_from="VASgroup",values_from=all_of(colnames(highVASstat)))
+overallVASstat <- full_join(highVASstat,lowVASstat)
+library("tidyverse")
+library("readxl")
+library("dplyr")
+library("ggplot2")
+biomarker <- read_excel("biomarkers.xlsx")
+covariates <- read_excel("covariates.xlsx")
+View(biomarker)
+View(covariates)
+View(covariates)
+# Create new columns to separate the patient ID and time of blood sampling and convert the table from long to wide format in order to have 1 row per patient
+biomarker_name <- colnames(biomarker[,2:10])
+biomarker <- biomarker %>%
+separate_wider_delim(Biomarker,delim="-",names=c("PatientID","SampleTime")) %>%
+pivot_wider(names_from=SampleTime,values_from=all_of(biomarker_name),names_vary="slowest")
+# Install necessary packages and load them accordingly
+install.packages("tidyverse")
+install.packages("tidyverse")
+biomarker <- biomarker %>%
+separate_wider_delim(Biomarker,delim="-",names=c("PatientID","SampleTime")) %>%
+pivot_wider(names_from=SampleTime,values_from=all_of(biomarker_name),names_vary="slowest")
+library("tidyverse")
+library("readxl")
+library("dplyr")
+library("ggplot2")
+library("psych")
+# Download the excel files from Github and read it in R Studio
+download.file("https://github.com/s2465202/Probability-Statistics_Assignment/raw/main/biomarkers.xlsx", destfile = "biomarkers.xlsx",mode = "wb")
+biomarker <- read_excel("biomarkers.xlsx")
+download.file("https://github.com/s2465202/Probability-Statistics_Assignment/raw/main/covariates.xlsx", destfile = "covariates.xlsx",mode = "wb")
+covariates <- read_excel("covariates.xlsx")
+# Create new columns to separate the patient ID and time of blood sampling and convert the table from long to wide format in order to have 1 row per patient
+biomarker_name <- colnames(biomarker[,2:10])
+biomarker <- biomarker %>%
+separate_wider_delim(Biomarker,delim="-",names=c("PatientID","SampleTime")) %>%
+pivot_wider(names_from=SampleTime,values_from=all_of(biomarker_name),names_vary="slowest")
+# Install necessary packages and load them accordingly
+install.packages("tidyverse")
+install.packages("tidyverse")
+library("tidyverse")
+library("readxl")
+library("dplyr")
+library("ggplot2")
+library("psych")
+# Download the excel files from Github and read it in R Studio
+download.file("https://github.com/s2465202/Probability-Statistics_Assignment/raw/main/biomarkers.xlsx", destfile = "biomarkers.xlsx",mode = "wb")
+biomarker <- read_excel("biomarkers.xlsx")
+download.file("https://github.com/s2465202/Probability-Statistics_Assignment/raw/main/covariates.xlsx", destfile = "covariates.xlsx",mode = "wb")
+covariates <- read_excel("covariates.xlsx")
+# Create new columns to separate the patient ID and time of blood sampling and convert the table from long to wide format in order to have 1 row per patient
+biomarker_name <- colnames(biomarker[,2:10])
+biomarker <- biomarker %>%
+separate_wider_delim(Biomarker,delim="-",names=c("PatientID","SampleTime")) %>%
+pivot_wider(names_from=SampleTime,values_from=all_of(biomarker_name),names_vary="slowest")
+# Review data structure and data types for biomarker and covariates to see if any conversion if required before joining up the two datasets and using them for analysis
+str(biomarker)
+str(covariates)
+View(biomarker)
+View(biomarker)
+View(covariates)
+View(covariates)
+# All of the columns in the two datasets are numerical except for biomarker$PatientID. Convert biomarker$PatientID into numerical
+biomarker$PatientID <- as.numeric(biomarker$PatientID)
+# Create a new dataframe to join up the biomarker and covariates dataset based on PatientID
+fulldata <- full_join(covariates,biomarker)
+# Select column names for biomarker levels at inclusion (time = 0)
+biomarker_name_inclusion <- colnames(fulldata[,7:15])
+# Visualise the VAS level by biomarker level to have an preliminary data discovery
+fulldata %>%
+drop_na(any_of(biomarker_name_inclusion))%>%
+select("PatientID","VAS-at-inclusion","IL-8_0weeks":"CSF-1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-c("PatientID","VAS-at-inclusion"))%>%
+ggplot(aes(x=`VAS-at-inclusion`,y=BiomarkerLevel))+
+geom_point()+
+facet_wrap(~BiomarkerName)+
+ggtitle("VAS at inclusion by Biomarker Level")
+# Define two datasets based on the VAS level at inclusion - one with high VAS (>=5) and another with low VAS (<5). If the patient has missing values for biomarker level at inclusion, remove the record accordingly.
+highVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`>= 5) %>%
+drop_na(any_of(biomarker_name_inclusion))
+lowVASdata <- fulldata %>%
+filter(`VAS-at-inclusion`<5) %>%
+drop_na(any_of(biomarker_name_inclusion))
+# Compare the descriptive statistics for the two groups
+highVASstat <- highVASdata %>%
+select("IL-8_0weeks":"CSF-1_0weeks")%>%
+describe()%>%
+mutate(VASgroup="HighVAS")
+highVASstat[,1] <- rownames(highVASstat)
+lowVASstat <- lowVASdata %>%
+select("IL-8_0weeks":"CSF-1_0weeks")%>%
+describe()%>%
+mutate(VASgroup="LowVAS")
+lowVASstat[,1] <- rownames(lowVASstat)
+overallVASstat <- full_join(highVASstat,lowVASstat)%>%
+rename(nameofbiomarker=vars)%>%
+relocate(VASgroup,.after=nameofbiomarker)%>%
+select("nameofbiomarker","VASgroup","min","mean","median","max","sd")
+View(overallVASstat)
+overallVASstat %>%
+pivot_longer(names_to="Descriptive_Statistics",values_to="Values",-c(nameofbiomarker,VASgroup))%>%
+ggplot(aes(x=Values,y=nameofbiomarker))+
+geom_line()+
+geom_point(aes(color=VASgroup))+
+theme(legend.position = "top")+
+facet_wrap(~Descriptive_Statistics,scales="free_x")+
+ggtitle("Comparison of Descriptive Statistics for High and Low VAS Groups by Biomarker")
+overallVASstat_tbl <- overallVASstat %>%
+pivot_wider(names_from=VASgroup,values_from=all_of(c("min","mean","median","max","sd")))
+View(overallVASstat_tbl)
+View(overallVASstat_tbl)
+# Visualise the distribution of biomarker values by VAS group
+highVASdata %>%
+select("PatientID","IL-8_0weeks":"CSF-1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-"PatientID")%>%
+ggplot(aes(x=BiomarkerLevel))+
+geom_histogram(aes(y=after_stat(density)))+
+geom_density()+
+facet_wrap(~BiomarkerName,scales="free")+
+ggtitle("Biomarker Level Distribution for High VAS Group")
+lowVASdata %>%
+select("PatientID","IL-8_0weeks":"CSF-1_0weeks")%>%
+pivot_longer(names_to="BiomarkerName",values_to="BiomarkerLevel",-"PatientID")%>%
+ggplot(aes(x=BiomarkerLevel))+
+geom_histogram(aes(y=after_stat(density)))+
+geom_density()+
+facet_wrap(~BiomarkerName,scales="free")+
+ggtitle("Biomarker Level Distribution for Low VAS Group")
+t_test_result <- data.frame()
+for (i in 7:15){
+biomarker_t_test <- t.test(highVASdata[,i],lowVASdata[,i],alternative="two.sided",var.equal=FALSE)
+t_test_result[1,i-6] <- biomarker_t_test$p.value
+t_test_result[2,i-6] <- if(biomarker_t_test$p.value > 0.05){
+"Do Not Reject"} else {
+"Reject"
+}
+t_test_result[3,i-6] <- if(biomarker_t_test$p.value > 0.05/9){
+"Do Not Reject"} else {
+"Reject"
+}
+}
+colnames(t_test_result) <- colnames(highVASdata[,7:15])
+rownames(t_test_result) <- rbind("p-value of t-test","Pre-Bonferroni correction: Reject Null Hypothesis?", "Post-Bonferroni correction: Reject Null Hypothesis?")
+View(t_test_result)
+regdata <- fulldata %>%
+select("Age":"CSF-1_0weeks")%>%
+drop_na()%>%
+relocate(`Vas-12months`,.before=Age)%>%
+relocate(`VAS-at-inclusion`,.after=`Vas-12months`)
+# Set training and testing datasets
+set.seed(1332)
+sample_id <- sample(1:115,size = 115*0.8)
+regdata_train <- regdata[sample_id,]
+regdata_test <- regdata[-sample_id,]
+# Train the data through regression
+regmodel <- lm(`Vas-12months`~.,data=regdata_train)
+# Review the results and visualise the residuals
+summary(regmodel)
+ggplot(regdata_train,aes(x=regmodel$residuals))+
+geom_histogram(aes(y=after_stat(count)),colour = "black",fill="light blue")+
+geom_density(aes(y=after_stat(density)*40),colour = "red",bins=20)+
+scale_y_continuous(name="count",sec.axis=sec_axis(transform = ~./40, name = "density"))+
+ggtitle("Distribution of Regression Model Residuals")+
+theme(axis.title.y.right = element_text(color = "red"))+
+theme(axis.text.y.right = element_text(color = "red"))
+par(mfrow=c(1,2))
+plot(predict(regmodel),residuals(regmodel),main="Residuals by Fitted Values")
+qqnorm(regmodel$residuals)
+qqline(regmodel$residuals,col="red")
+boxplot(regdata_test[,16],main="Boxplot for Residuals",ylim=c(0,6))
+View(regdata_test)
+View(regdata_train)
+boxplot(regmodel$residuals,main="Boxplot for Residuals",ylim=c(0,6))
+boxplot(abs(regmodel$residuals),main="Boxplot for Residuals",ylim=c(0,6))
+boxplot(abs(regmodel$residuals),main="Boxplot for Residuals",ylim=c(0,6))
+boxplot(regmodel$residuals,main="Boxplot for Residuals",ylim=c(-6,6))
+describe(regmodel$residents)
+describe(regmodel$residuals)
+# Evaluate the model using the testing data
+regmodeltest <- predict(regmodel,regdata_test)
+regdata_test[,15] <- regmodeltest
+regdata_test[,16] <- abs(regdata_test[,1]-regdata_test[,15])
+colnames(regdata_test)[15:16] <- c("Predicted Vas-12months","Prediction Error")
+regdata_test %>%
+ggplot(aes(x=`Prediction Error`))+
+geom_histogram(aes(y=after_stat(count)),colour = "black",fill="light blue",bins=10)+
+geom_density(aes(y=after_stat(density)*15),colour = "red")+
+scale_y_continuous(name="count",sec.axis=sec_axis(transform = ~./15, name = "density"))+
+ggtitle("Distribution of Prediction Error")+
+theme(axis.title.y.right = element_text(color = "red"))+
+theme(axis.text.y.right = element_text(color = "red"))
+# Note the density curve and its axis are scaled at opposite direction in order to make the curve more visible and making sure the axis reflects its values
+boxplot(regdata_test[,16],main="Boxplot for Prediction Error",ylim=c(0,6))
+regdata_test %>%
+ggplot(aes(x=`Prediction Error`))+
+geom_histogram(aes(y=after_stat(count)),colour = "black",fill="light blue",bins=10)+
+geom_density(aes(y=after_stat(density)*15),colour = "red")+
+scale_y_continuous(name="count",sec.axis=sec_axis(transform = ~./15, name = "density"))+
+ggtitle("Distribution of Prediction Error")+
+theme(axis.title.y.right = element_text(color = "red"))+
+theme(axis.text.y.right = element_text(color = "red"))
+# Note the density curve and its axis are scaled at opposite direction in order to make the curve more visible and making sure the axis reflects its values
+boxplot(regdata_test[,16],main="Boxplot for Prediction Error",ylim=c(0,6))
+regdata_test[,16] <- regdata_test[,1]-regdata_test[,15]
+regdata_test %>%
+ggplot(aes(x=`Prediction Error`))+
+geom_histogram(aes(y=after_stat(count)),colour = "black",fill="light blue",bins=10)+
+geom_density(aes(y=after_stat(density)*15),colour = "red")+
+scale_y_continuous(name="count",sec.axis=sec_axis(transform = ~./15, name = "density"))+
+ggtitle("Distribution of Prediction Error")+
+theme(axis.title.y.right = element_text(color = "red"))+
+theme(axis.text.y.right = element_text(color = "red"))
+# Note the density curve and its axis are scaled at opposite direction in order to make the curve more visible and making sure the axis reflects its values
+boxplot(regdata_test[,16],main="Boxplot for Prediction Error",ylim=c(0,6))
+# Note the density curve and its axis are scaled at opposite direction in order to make the curve more visible and making sure the axis reflects its values
+boxplot(regdata_test[,16],main="Boxplot for Prediction Error",ylim=c(0,6))
+# Note the density curve and its axis are scaled at opposite direction in order to make the curve more visible and making sure the axis reflects its values
+boxplot(regdata_test[,16],main="Boxplot for Prediction Error",ylim=c(-6,6))
+# Note the density curve and its axis are scaled at opposite direction in order to make the curve more visible and making sure the axis reflects its values
+boxplot(regdata_test[,16],main="Boxplot for Prediction Error",ylim=c(-6,6))
+describe(regdata_test[,16])
+describe(as.numeric(regdata_test[,16]))
